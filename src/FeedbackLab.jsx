@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const examples = [
@@ -7,6 +6,10 @@ const examples = [
     student: "The Pythagorean theorem states that a² + b² = c². Therefore, 6² + 8² = 36 + 64 = 100. Taking the square root gives c = 10 cm.",
     ai: "Excellent work! You correctly identified and applied the Pythagorean theorem. Your calculations are accurate, and you included the correct unit.",
     teacher: "Excellent mathematical reasoning. You selected the appropriate theorem, showed every calculation and included the unit. To improve further, explain briefly why the hypotenuse is represented by c.",
+    changes: [
+      "The AI praise was general. I named what the student did well: the choice of theorem, every calculation shown and the unit.",
+      "I added a next step for improvement, because the AI gave the student nothing further to work on."
+    ],
     status: "strong"
   },
   {
@@ -14,6 +17,11 @@ const examples = [
     student: "6 + 8 = 14, so the hypotenuse is 14 cm.",
     ai: "Your answer is incorrect. Remember to use the Pythagorean theorem instead of simply adding the sides.",
     teacher: "You correctly identified the two given side lengths, but adding them does not give the hypotenuse. For a right triangle, use a² + b² = c². Try calculating 6² + 8² before taking the square root.",
+    changes: [
+      "The AI only said the answer was incorrect. I first recognised what the student did correctly (identifying the two given sides).",
+      "I explained why adding the sides is wrong instead of only naming the error.",
+      "I gave a concrete first step: calculate 6² + 8²."
+    ],
     status: "average"
   },
   {
@@ -21,6 +29,11 @@ const examples = [
     student: "I think the answer is 48 because 6 × 8 = 48.",
     ai: "This answer is incorrect. Multiplication of the two legs gives the area-related product, not the hypotenuse. Review the Pythagorean theorem.",
     teacher: "You have performed a correct multiplication, but it does not answer the question. The hypotenuse is the longest side of a right triangle. Use the formula a² + b² = c². Start by squaring 6 and 8 separately.",
+    changes: [
+      "The AI phrase \"area-related product\" was vague and could confuse the student, because 6 × 8 is not the area of the triangle. I removed it.",
+      "I acknowledged that the multiplication itself was correct, so the student does not feel everything was wrong.",
+      "I defined the hypotenuse as the longest side and gave a first step: square 6 and 8 separately."
+    ],
     status: "weak"
   },
   {
@@ -28,6 +41,11 @@ const examples = [
     student: "6² + 8² = 36 + 64 = 100.",
     ai: "You correctly applied the Pythagorean theorem, but your solution is incomplete. You need to take the square root of 100.",
     teacher: "Good progress! Your application of the Pythagorean theorem is completely correct. You have found the square of the hypotenuse, but you need one final step: calculate √100. Remember to include centimetres in your final answer.",
+    changes: [
+      "The AI feedback was accurate but cold. I added encouragement and made clear the method is fully correct.",
+      "I explained what the number 100 represents (the square of the hypotenuse), so the missing step makes sense.",
+      "I added a reminder about the unit, which the AI did not mention."
+    ],
     status: "partial"
   }
 ];
@@ -41,13 +59,17 @@ export default function FeedbackLab() {
   return (
     <section className="lab-section" id="feedback-lab">
       <div className="lab-heading">
-        <div className="intro-label">THE ART OF EVALUATION</div>
+        <div className="intro-label">SECTION 2 · AI-SUPPORTED FEEDBACK</div>
         <h2>AI Feedback <em>Laboratory</em></h2>
         <p>
           Can artificial intelligence understand mathematical thinking?
           Explore four student responses and compare AI feedback with
           carefully reviewed teacher feedback.
         </p>
+        <small>
+          The AI feedback shown here was produced with an AI tool and then
+          reviewed by a human. It is saved sample output, not a live AI connection.
+        </small>
       </div>
 
       <div className="lab-question">
@@ -83,7 +105,7 @@ export default function FeedbackLab() {
             <span>✧</span> AI-GENERATED FEEDBACK
           </div>
           <p>{example.ai}</p>
-          <small>Initial AI output · Reviewed by the teacher</small>
+          <small>Initial AI output</small>
         </div>
 
         <div className="feedback-box teacher-box">
@@ -93,6 +115,15 @@ export default function FeedbackLab() {
           <p>{example.teacher}</p>
           <small>Final feedback after human review</small>
         </div>
+      </div>
+
+      <div className="changes-box">
+        <div className="feedback-title">WHAT I CHANGED AND WHY</div>
+        <ul>
+          {example.changes.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </div>
 
       <div className={`quality-indicator ${example.status}`}>

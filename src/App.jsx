@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./App.css";
 import FeedbackLab from "./FeedbackLab";
+import QuizSection from "./QuizSection";
 const disciplines = [
   { name: "Arithmetic", icon: "✥", description: "Numbers and operations." },
   { name: "Algebra", icon: "𝑥²", description: "Equations and expressions." },
@@ -443,7 +444,8 @@ const checkAnswer = (question, userAnswer) => {
             )}
           </section>
         )}
-     <FeedbackLab />
+        <QuizSection />
+        <FeedbackLab /> 
      
       </main>
 

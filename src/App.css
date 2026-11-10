@@ -1050,3 +1050,18 @@ footer {
     font-size: 20px;
   }
 }
+
+.qs-section { max-width: 900px; margin: 0 auto; padding: 80px 24px; }
+.qs-lead { max-width: 640px; opacity: 0.85; }
+.qs-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
+.qs-box { background: #f4efe4; color: #1f1a14; border: 1px solid #b08d57; padding: 24px; margin: 24px 0; }
+.qs-box pre { white-space: pre-wrap; font-family: inherit; line-height: 1.6; margin: 0; }
+.qs-list { list-style: none; padding: 0; margin: 0; counter-reset: q; }
+.qs-item { counter-increment: q; background: #f4efe4; color: #1f1a14; border-left: 4px solid #b08d57; padding: 20px 24px; margin-bottom: 16px; }
+.qs-item::before { content: "Question " counter(q); font-weight: bold; color: #b08d57; }
+.qs-meta { font-size: 12px; letter-spacing: 0.15em; margin: 6px 0; }
+.qs-history { font-style: italic; margin: 8px 0; }
+.qs-question { font-size: 18px; margin: 8px 0; }
+.qs-answer { display: flex; flex-direction: column; gap: 4px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed #b08d57; }
+.changes-box { background: #f4efe4; color: #1f1a14; border-left: 4px solid #b08d57; padding: 20px 24px; margin: 24px 0; }
+.changes-box ul { margin: 12px 0 0; padding-left: 20px; line-height: 1.6; }
