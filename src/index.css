@@ -1,0 +1,22 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #b38c53;
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #b38c53;
+  color: #ffffff;
+}
