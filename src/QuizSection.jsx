@@ -76,7 +76,7 @@ const questions = [
 ];
 
 const reflection =
-  "AI helped me create different mathematical questions, generate sample student responses and produce initial feedback for different levels of understanding. It also saved time and helped structure the assessment process. However, I noticed that AI-generated feedback is not always sufficient. Some responses may be too general and fail to explain exactly where a student made a mistake. AI can also overlook important details, such as incomplete reasoning or missing mathematical units. Therefore, I reviewed and improved the feedback to make it more specific, supportive and educational. I also used human judgment to distinguish between completely incorrect answers and partially correct solutions. Next time, I would test the platform with real students, expand the question bank and integrate an AI API to provide more personalised feedback.";
+  "Working on this project taught me that using AI to create a quiz is not as simple as asking a question and copying the answer. I had to write clear prompts, check every answer myself, and make sure the historical notes were accurate. The most useful part was the feedback section, where I compared the AI-generated comments with my own revisions and explained what I changed and why. I noticed that AI feedback was often too general, so I made it more specific and encouraging for the student. This showed me that a teacher's critical review is still essential, because AI can sound confident even when something is wrong or unclear. Overall, I learned to treat AI as a helpful assistant, not as a replacement for my own judgement.";
 
 export default function QuizSection() {
   const [showKey, setShowKey] = useState(false);
